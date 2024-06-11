@@ -1,1 +1,33 @@
-<p class="fg-secondary text-center text-huge bold italic underline" @appear>Entity data: {{ this.data() }}</p>
+<div class="flex">
+    <div>
+        @for (board of boards(); track $index) {
+            <hr />
+            <label
+                >Board:
+                <input type="text" [(ngModel)]="board.name" />
+            </label>
+            <button (click)="removeBoard(board)">Remove</button>
+
+            <div>
+                @for (card of cards(); track $index) {
+                    <hr />
+                    <label
+                        >Card:
+                        <input type="text" [(ngModel)]="card.name" />
+                    </label>
+                    <button (click)="removeCard(card)">Remove</button>
+                }
+
+                <hr />
+                <div>
+                    <button (click)="addCard(board)">Add Card</button>
+                </div>
+            </div>
+        }
+
+        <hr />
+        <div>
+            <button (click)="addBoard()">New Board</button>
+        </div>
+    </div>
+</div>

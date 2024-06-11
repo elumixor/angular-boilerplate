@@ -5,7 +5,7 @@ import { connectionParams } from "./src/server/db";
 export default {
     schema: "./src/server/db/schema.ts",
     out: "./drizzle",
-    driver: "pg", // 'pg' | 'mysql2' | 'better-sqlite' | 'libsql' | 'turso'
+    dialect: "postgresql",
     dbCredentials: {
         ...connectionParams,
     },
